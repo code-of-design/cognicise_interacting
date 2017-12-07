@@ -1,0 +1,235 @@
+@import "./reset.scss";
+
+/*---------- Layout ----------*/
+$page_header_height: 60px;
+$page_font_size: 16px;
+.page{
+	font-size: $page_font_size;
+	font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+	color: $black;
+	background-color: $grey;
+}
+.page-header{
+	width: 100%;
+	height: $page_header_height;
+	background-color: $white;
+}
+.page-content{
+	margin-top: 30px;
+	color: $black;
+	background-color: $grey;
+	.page-content__nav{ // コンテンツナビゲーション
+		margin-bottom: 30px;
+		.page-name{ // ページ名
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.page-back{ // 戻るボタン
+				a{
+					color: $black;
+				}
+				.icon{
+					font-size: 24px;
+				}
+		}
+	}
+}
+
+/*---------- Header ----------*/
+$logo_height: 34px;
+.logo{ // Logo
+	padding-top: ($page_header_height - $logo_height)/2;
+	background-color: $white;
+}
+.logo__img{ // ロゴ画像
+	height: $logo_height;
+}
+/*---------- Content ----------*/
+/**
+ * コグニステップの設定
+ * index.php
+ */
+ .users-management{ // 参加者の管理
+ 	.inner{
+ 		position: absolute;
+ 		right: 0px;
+ 	}
+ }
+ .users-management__btn{ // 参加者の管理ボタン
+	margin-top: -12px;
+ 	margin-right: 15px;
+ 	font-size: $page_font_size;
+ 	color: $white;
+ 	background-color: $blue;
+ 	.icon{ // アイコン
+ 		padding-right: 4px;
+		color: $white;
+ 		vertical-align: bottom;
+ 		font-size: $page_font_size + 2px;
+ 	}
+ }
+
+.users-form{ // 参加者
+	.input-text{
+		width: 200px;
+		border: none;
+	}
+	.input-text-small{
+		width: 100px;
+	}
+}
+.user-select{ // 参加者の選択
+	width: 100%;
+	margin-bottom: 20px;
+	.inner{
+		padding: 10px;
+		background-color: $white;
+	}
+}
+.user-select-header{ // ヘッダ
+	width: 100%;
+	margin-bottom: 10px;
+	.user-number{ // user番号
+		font-size: 24px;
+		font-weight: bold;
+	}
+	.user-select-btn{ // 参加者の選択ボタン
+		border-width: 2px;
+		padding: 4px 6px;
+		font-size: 12px;
+	}
+}
+.user-select-content{
+	width: 100%;
+	.label{
+		display: block;
+		margin-bottom: 6px;
+	}
+	.name{ // user名
+		text-decoration: underline;
+	}
+}
+.btn-start, .btn-stop{ // START, STOPボタン
+	color: $white;
+	font-size: 24px;
+	font-weight: bold;
+}
+.btn-start{ // START
+	border-color: $blue;
+	background-color: $blue;
+}
+.btn-start--active{ // コグニサイズ状態: active
+	border-color: $light-grey;
+	background-color: $light-grey;
+}
+.btn-stop{ // STOP
+	border-color: $light-grey;
+	background-color: $light-grey;
+}
+.btn-stop--active{ // コグニサイズ状態: active
+	border-color: $blue;
+	background-color: $blue;
+}
+
+/**
+ * 参加者情報
+ * user_info.php
+ */
+.cognitions{ // 認知課題
+	li{
+		width: 100%;
+		// height: 60px;
+		border-bottom: 1px $grey solid;
+		padding: 10px;
+		background-color: $white;
+		.item{
+
+		}
+	}
+}
+
+/**
+ * 参加者の管理
+ * management_users.php
+ */
+.regist-user{ // 新規参加者の登録
+	.regist-user-btn{ // 新規参加者の登録ボタン
+		border-color: $pink;
+		color: $white;
+		background-color: $pink;
+	}
+	.icon{
+		padding-right: 4px;
+		font-size: $page_font_size+2;
+		vertical-align: bottom;
+	}
+}
+.users-all{ // 参加者の一覧
+	margin-top: 30px;
+}
+.user{ // 参加者
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px $grey solid;
+	padding: 10px;
+	background-color: $white;
+	.inner{
+		float: left;
+		width: 90%;
+		.user-item{
+
+		}
+		.label{
+			display: block;
+			margin-bottom: 6px;
+			font-size: 14px;
+		}
+	}
+	.btn-user-update-select{ // 更新/選択ボタン
+		float: right;
+		border: solid $blue 2px;
+		padding: 4px;
+		font-size: 14px;
+	}
+}
+
+/**
+ * 新規参加者の登録
+ * regist_new_user.php
+ */
+.resist-new-user-form{
+	padding-top: 15px;
+	li{
+		margin-bottom: 30px;
+	}
+	label{
+		display: block;
+		margin-bottom: 10px;
+	}
+	.unit{
+		margin-left: 10px;
+	}
+	.regist-btn{
+		color: $white;
+		font-size: 24px;
+		background-color: $blue;
+	}
+}
+
+/**
+ * 参加者の選択
+ * select_user.php
+ */
+.no-user{ // 参加者なし
+	width: 100%;
+	padding-top: 20px;
+	// text-align: center;
+	background-color: $light-grey;
+}
+.no-user-btn{ // 参加者なしボタン
+	a{
+		padding: 10px 45%;
+		color: $white;
+		font-size: 20px;
+	}
+}

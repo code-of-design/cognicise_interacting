@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none; }
+
+/*----------------------------------------------------------------------------*/
+/*---------- Commons ----------*/
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../data/NotoSans/NotoSans-Bold.ttf"); }
+
+@font-face {
+  font-family: "Noto Sans CJK JP";
+  src: url("../data/NotoSansCJKjp/NotoSansCJKjp-Bold.otf"); }
+
+a:link, a:visited, a:active, a:hover {
+  text-decoration: none;
+  color: #42A5F5; }
+
+.btn {
+  background-color: #FFF;
+  border: 3px solid #42A5F5;
+  border-radius: 10px;
+  text-align: center;
+  color: #42A5F5; }
+
+/*----------------------------------------------------------------------------*/
+/*---------- Layout ----------*/
+.page {
+  background-color: #FFF;
+  font-size: 24px;
+  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+  color: #42A5F5; }
+
+.page-header {
+  padding-top: 33px;
+  padding-bottom: 33px; }
+
+/*---------- Header ----------*/
+.logo {
+  background-color: #FFF; }
+
+.logo__title {
+  padding-bottom: 6.5px;
+  font-size: 36px; }
+
+.logo__label {
+  font-size: 18px;
+  letter-spacing: 0.1em; }
+
+.log-heartrate .inner {
+  position: absolute;
+  right: 0px; }
+
+.log-heartrate__btn {
+  background-color: #FFF;
+  margin-right: 15px;
+  margin-top: 4px;
+  padding: 10px 10px;
+  font-size: 18px;
+  color: #42A5F5; }
+  .log-heartrate__btn .icon {
+    padding-right: 5px;
+    vertical-align: bottom;
+    font-size: 24px;
+    color: #42A5F5; }
+
+/*---------- Content ----------*/
+/**
+ * コグニサイズの選択
+ * index.php
+ */
+.training-menu {
+  padding-top: 33px; }
+
+.btn-training-menu {
+  width: 100%;
+  background-color: #42A5F5;
+  padding: 40px 0px; }
+
+.btn-training-menu__title {
+  font-size: 36px;
+  color: #FFF; }
+
+/**
+ * コグニサイズの管理
+ * ognicise_setting.php
+ */
+.nav {
+  padding: 33px 0px; }
+  .nav .btn-back {
+    font-size: 36px;
+    vertical-align: baseline; }
+  .nav .cognicise-name {
+    font-size: 36px;
+    text-align: center; }
+
+.heartrate {
+  padding-top: 16.5px;
+  padding-bottom: 33px; }
+
+.row-heartrate {
+  margin-bottom: 33px; }
+
+.heartrate-player .inner {
+  height: 220px;
+  padding: 0px 20px; }
+
+.heartrate-player__name {
+  padding-bottom: 15px;
+  font-size: 24px;
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #42A5F5; }
+
+.heartrate-player__chart {
+  width: 75%;
+  height: 160px;
+  float: left; }
+
+.heartrate-canvas {
+  height: 160px;
+  border: 2px solid #42A5F5; }
+
+.heartrate-player__bpm {
+  width: 25%;
+  height: 160px;
+  float: right;
+  color: #42A5F5; }
+  .heartrate-player__bpm .heartrate-player__bpm-item {
+    padding-bottom: 20px; }
+  .heartrate-player__bpm .label {
+    padding-bottom: 8px;
+    font-size: 16px; }
+  .heartrate-player__bpm .icon {
+    padding-right: 5px;
+    font-size: 22px;
+    vertical-align: text-bottom; }
+  .heartrate-player__bpm .value {
+    margin-right: 5px;
+    font-size: 36px; }
+  .heartrate-player__bpm .unit {
+    font-size: 18px; }
+
+.btn-cognicise-start {
+  width: 100%;
+  background-color: #42A5F5;
+  margin-bottom: 33px;
+  padding: 20px 0px;
+  font-size: 36px;
+  color: #FFF; }
+
+/*
+// トレーニング管理フォーム
+.training-form{
+
+}
+
+// トレーニングオプション
+.training-option{
+	margin-bottom: 60px;
+}
+.label{
+	padding-right: 20px;
+	font-size: 36px;
+	vertical-align: bottom;
+}
+.text{
+	width: 190px;
+	height: 48px;
+	font-size: 36px;
+}
+.view-text{
+	font-size: 48px;
+}
+
+// トレーニング開始ボタン
+.training-start{
+	width: 80%;
+	margin: 0px auto;
+}
+
+// トレーニング開始/停止ボタン
+.btn-start{
+	padding: 20px 0px;
+	width: 100%;
+	font-size: 36px;
+}
+
+// トレーニング停止ボタン
+.btn-stop{
+	background-color: #E0E0E0;
+}
+*/
