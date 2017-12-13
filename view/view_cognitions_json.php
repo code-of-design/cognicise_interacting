@@ -19,7 +19,7 @@ function searchCognitions($user_id) {
           $answer_rate = $cognitions_json[$i][$j]["answer_rate"]; // 認知課題の正答率
           $date = $cognitions_json[$i]["date"]; // 日付
           $end_time = $cognitions_json[$i]["end_time"]; // 終了時刻
-          viewCognitions($cognition, $time, $rhythm, $answer_rate, $date, $end_time);
+          viewCognitions($cognition_1, $cognition_2, $count_order, $time, $rhythm, $answer_rate, $date, $end_time);
       }
     }
   }
@@ -59,7 +59,7 @@ function viewCognitions($cognition_1, $cognition_2, $count_order, $time, $rhythm
 
   // 認知課題2
   switch ($cognition_2) {
-    case 0:
+    case -1:
       $cognition_2_value = "なし";
       break;
     case 2:
