@@ -1,21 +1,59 @@
-// 認知課題のPOST通信
-$('[name=cognition1]').change(function() {
-  var cognition = $('[name=cognition1]').val();
-  $.post( "set_cognition.php", {cognition1: cognition}, function(data){
+// 認知課題1のPOST通信
+$('[name=cognition_11]').change(function() {
+  var cognition = $('[name=cognition_11]').val();
+  $.post( "set_cognition.php", {cognition_11: cognition}, function(data){
     console.log(data);
   });
 });
-$('[name=cognition2]').change(function() {
-  var cognition = $('[name=cognition2]').val();
-  $.post( "set_cognition.php", {cognition2: cognition});
+$('[name=cognition_12]').change(function() {
+  var cognition = $('[name=cognition_12]').val();
+  $.post( "set_cognition.php", {cognition_12: cognition});
 });
-$('[name=cognition3]').change(function() {
-  var cognition = $('[name=cognition3]').val();
-  $.post( "set_cognition.php", {cognition3: cognition});
+$('[name=cognition_13]').change(function() {
+  var cognition = $('[name=cognition_13]').val();
+  $.post( "set_cognition.php", {cognition_13: cognition});
 });
-$('[name=cognition4]').change(function() {
-  var cognition = $('[name=cognition4]').val();
-  $.post( "set_cognition.php", {cognition4: cognition});
+$('[name=cognition_14]').change(function() {
+  var cognition = $('[name=cognition_14]').val();
+  $.post( "set_cognition.php", {cognition_14: cognition});
+});
+
+// 認知課題2のPOST通信
+$('[name=cognition_21]').change(function() {
+  var cognition = $('[name=cognition_21]').val();
+  $.post( "set_cognition.php", {cognition_21: cognition}, function(data){
+    console.log(data);
+  });
+});
+$('[name=cognition_22]').change(function() {
+  var cognition = $('[name=cognition_22]').val();
+  $.post( "set_cognition.php", {cognition_22: cognition});
+});
+$('[name=cognition_23]').change(function() {
+  var cognition = $('[name=cognition_23]').val();
+  $.post( "set_cognition.php", {cognition_23: cognition});
+});
+$('[name=cognition_24]').change(function() {
+  var cognition = $('[name=cognition_24]').val();
+  $.post( "set_cognition.php", {cognition_24: cognition});
+});
+
+// 認知課題のカウントの順序のPOST通信
+$('[name=count_order1]').change(function() {
+  var count_order = $('[name=count_order1]').val();
+  $.post("set_cognition.php", {count_order1: count_order});
+});
+$('[name=count_order2]').change(function() {
+  var count_order = $('[name=count_order2]').val();
+  $.post("set_cognition.php", {count_order2: count_order});
+});
+$('[name=count_order3]').change(function() {
+  var count_order = $('[name=count_order3]').val();
+  $.post("set_cognition.php", {count_order3: count_order});
+});
+$('[name=count_order4]').change(function() {
+  var count_order = $('[name=count_order4]').val();
+  $.post("set_cognition.php", {count_order4: count_order});
 });
 
 // 認知課題の時間のPOST通信

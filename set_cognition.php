@@ -7,8 +7,14 @@
   $cognicise_settings_json = json_decode($cognicise_settings_file, true); // JSONデコード
 
   for ($j=0; $j<USER_SIZE; $j++) {
-    if (isset($_POST["cognition".($j+1)])) { // 認知課題を取得する
-      $cognicise_settings_json[$j]["cognition"] = (int)$_POST["cognition".($j+1)];
+    if (isset($_POST["cognition_1".($j+1)])) { // 認知課題1を取得する
+      $cognicise_settings_json[$j]["cognition_1"] = (int)$_POST["cognition_1".($j+1)];
+    }
+    if (isset($_POST["cognition_2".($j+1)])) { // 認知課題2を取得する
+      $cognicise_settings_json[$j]["cognition_2"] = (int)$_POST["cognition_2".($j+1)];
+    }
+    if (isset($_POST["count_order".($j+1)])) { // 認知課題のカウントの順序を取得する
+      $cognicise_settings_json[$j]["count_order"] = (int)$_POST["count_order".($j+1)];
     }
     if (isset($_POST["time".($j+1)])) { // 認知課題の時間を取得する
       $cognicise_settings_json[$j]["time"] = (int)$_POST["time".($j+1)];

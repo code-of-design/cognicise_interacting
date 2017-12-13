@@ -17,20 +17,44 @@ function viewUser($user_num, $user_id, $user_name){ // user番号, userId, user�
 $cognicise_settings_file_path = "./data/cognicise_settings.json"; // コグニサイズ設定
 $cognicise_settings_file = file_get_contents($cognicise_settings_file_path, true);
 $cognicise_settings_json = json_decode($cognicise_settings_file, true); // JSONデコード
-$cognition_selected = array(); // 認知課題selectのデフォルト値
+$cognition_1_selected = array(); // 認知課題1selectのデフォルト値
+$cognition_2_selected = array(); // 認知課題2selectのデフォルト値
+$cognition_1_size = 7; // 認知課題1のサイズ
+$cognition_2_size = 8; // 認知課題2のサイズ
+$count_order_selected = array(); // カウントの順序のデフォルト値
 $time_selected = array(); // 時間selectのデフォルト値
 $rhythm_selected = array(); // リズムselectのデフォルト値
-$cognition_selected_num = $cognicise_settings_json[$user_num-1]["cognition"];
-$time_selected_num = $cognicise_settings_json[$user_num-1]["time"];
-$rhythm_selected_num = $cognicise_settings_json[$user_num-1]["rhythm"];
-// 認知課題
-for ($i=0; $i<6 ; $i++) {
-	if ($cognition_selected_num == ($i+1)) {
-		$cognition_selected[$i] = "selected";
+$cognition_1_selected_num = $cognicise_settings_json[$user_num-1]["cognition_1"]; // 認知課題1
+$cognition_2_selected_num = $cognicise_settings_json[$user_num-1]["cognition_2"]; // 認知課題2
+$count_order_selected_num = $cognicise_settings_json[$user_num-1]["count_order"]; // カウントの順序
+$time_selected_num = $cognicise_settings_json[$user_num-1]["time"]; // 時間
+$rhythm_selected_num = $cognicise_settings_json[$user_num-1]["rhythm"]; // リズム
+// 認知課題1
+for ($i=0; $i<$cognition_1_size ; $i++) {
+	if ($cognition_1_selected_num == ($i+1)) {
+		$cognition_1_selected[$i] = "selected";
 	}
 	else {
-		$cognition_selected[$i] = "";
+		$cognition_1_selected[$i] = "";
 	}
+}
+// 認知課題2
+for ($i=0; $i<$cognition_2_size ; $i++) {
+	if ($cognition_2_selected_num == ($i+1)) {
+		$cognition_2_selected[$i] = "selected";
+	}
+	else {
+		$cognition_2_selected[$i] = "";
+	}
+}
+// カウントの順序
+if ($count_order_selected_num  == "asc") {
+	$count_order_selected[0] = "selected";
+	$count_order_selected[1] = "";
+}
+else if ($count_order_selected_num == "desc") {
+	$count_order_selected[0] = "";
+	$count_order_selected[1] = "selected";
 }
 // 時間
 if ($time_selected_num == 30) {
@@ -77,14 +101,37 @@ $dom = <<<EOM
 					</a>
 	      </li>
 	      <li class="col">
-	        <label class="label" for="cognition">認知課題</label>
-	        <select class="cognition" name="cognition{$user_num}">
-	          <option value="1" {$cognition_selected[0]}>3の倍数で拍手</option>
-	          <option value="2" {$cognition_selected[1]}>3の倍数で拍手(引き算)</option>
-	          <option value="3" {$cognition_selected[2]}>4の倍数で拍手</option>
-	          <option value="4" {$cognition_selected[3]}>4の倍数で拍手(引き算)</option>
-						<option value="5" {$cognition_selected[4]}>3と4の倍数で拍手</option>
-						<option value="6" {$cognition_selected[5]}>3と4の倍数で拍手(引き算)</option>
+	        <label class="label" for="cognition_1">認知課題1</label>
+	        <select class="cognition_1" name="cognition_1{$user_num}">
+	          <option value="2" {$cognition_1_selected[0]}>2の倍数で拍手</option>
+	          <option value="3" {$cognition_1_selected[1]}>3の倍数で拍手</option>
+						<option value="4" {$cognition_1_selected[2]}>4の倍数で拍手</option>
+						<option value="5" {$cognition_1_selected[3]}>5の倍数で拍手</option>
+						<option value="6" {$cognition_1_selected[4]}>6の倍数で拍手</option>
+						<option value="7" {$cognition_1_selected[5]}>7の倍数で拍手</option>
+						<option value="8" {$cognition_1_selected[6]}>8の倍数で拍手</option>
+						<option value="9" {$cognition_1_selected[7]}>9の倍数で拍手</option>
+	        </select>
+	      </li>
+				<li class="col">
+	        <label class="label" for="cognition_2">認知課題2</label>
+	        <select class="cognition_2" name="cognition_2{$user_num}">
+						<option value="0" {$cognition_2_selected[0]}>なし</option>
+	          <option value="2" {$cognition_2_selected[1]}>2の倍数で拍手</option>
+	          <option value="3" {$cognition_2_selected[2]}>3の倍数で拍手</option>
+						<option value="4" {$cognition_2_selected[3]}>4の倍数で拍手</option>
+						<option value="5" {$cognition_2_selected[4]}>5の倍数で拍手</option>
+						<option value="6" {$cognition_2_selected[5]}>6の倍数で拍手</option>
+						<option value="7" {$cognition_2_selected[6]}>7の倍数で拍手</option>
+						<option value="8" {$cognition_2_selected[7]}>8の倍数で拍手</option>
+						<option value="9" {$cognition_2_selected[8]}>9の倍数で拍手</option>
+	        </select>
+	      </li>
+				<li class="col">
+	        <label class="label" for="count_order">カウントの順序</label>
+	        <select class="count_order" name="count_order{$user_num}">
+	          <option value="asc" {$count_order_selected[0]}>足し算</option>
+	          <option value="desc" {$count_order_selected[1]}>引き算</option>
 	        </select>
 	      </li>
 	      <li class="col">
@@ -102,7 +149,7 @@ $dom = <<<EOM
 	          <option value="fast" {$rhythm_selected[2]}>速い</option>
 	        </select>
 	      </li>
-			
+
 		  </ul> <!-- .user-select-content -->
 		</div> <!-- .inner -->
 	</div> <!-- .user-select -->
