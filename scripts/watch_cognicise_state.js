@@ -5,7 +5,8 @@ var end_flg = 0; // 終了フラグ
 setInterval("watchCogniciseState()", 1000);
 
 function watchCogniciseState() {
-  $.get('../get_cognicise_state.php', function(data) {
+  console.log("Hello!");
+  $.get('../cognicise_interacting/get_cognicise_state.php', function(data) {
     console.log("CogniciseState:", data);
     if (data == "wait" && end_flg == 0){
       alert("コグニステップを終了しました。");

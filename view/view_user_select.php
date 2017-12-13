@@ -30,23 +30,30 @@ $count_order_selected_num = $cognicise_settings_json[$user_num-1]["count_order"]
 $time_selected_num = $cognicise_settings_json[$user_num-1]["time"]; // 時間
 $rhythm_selected_num = $cognicise_settings_json[$user_num-1]["rhythm"]; // リズム
 // 認知課題1
-for ($i=0; $i<$cognition_1_size ; $i++) {
+for ($i=1; $i<=$cognition_1_size ; $i++) {
 	if ($cognition_1_selected_num == ($i+1)) {
-		$cognition_1_selected[$i] = "selected";
+		$cognition_1_selected[$i-1] = "selected";
 	}
 	else {
-		$cognition_1_selected[$i] = "";
+		$cognition_1_selected[$i-1] = "";
 	}
 }
 // 認知課題2
-for ($i=0; $i<$cognition_2_size ; $i++) {
-	if ($cognition_2_selected_num == ($i+1)) {
-		$cognition_2_selected[$i] = "selected";
-	}
-	else {
-		$cognition_2_selected[$i] = "";
-	}
+if($cognition_2_selected_num == -1){ // なし
+	$cognition_2_selected[0] = "selected";
 }
+else{
+	$cognition_2_selected[0] = "";
+}
+for ($i=2; $i<=$cognition_2_size ; $i++) {
+		if ($cognition_2_selected_num == $i) {
+			$cognition_2_selected[$i-1] = "selected";
+		}
+		else {
+			$cognition_2_selected[$i-1] = "";
+		}
+}
+
 // カウントの順序
 if ($count_order_selected_num  == "asc") {
 	$count_order_selected[0] = "selected";
@@ -116,7 +123,7 @@ $dom = <<<EOM
 				<li class="col">
 	        <label class="label" for="cognition_2">認知課題2</label>
 	        <select class="cognition_2" name="cognition_2{$user_num}">
-						<option value="0" {$cognition_2_selected[0]}>なし</option>
+						<option value="-1" {$cognition_2_selected[0]}>なし</option>
 	          <option value="2" {$cognition_2_selected[1]}>2の倍数で拍手</option>
 	          <option value="3" {$cognition_2_selected[2]}>3の倍数で拍手</option>
 						<option value="4" {$cognition_2_selected[3]}>4の倍数で拍手</option>
@@ -138,7 +145,8 @@ $dom = <<<EOM
 	        <label class="label" for="time">時間</label>
 	        <select class="time" name="time{$user_num}">
 	          <option value="30" {$time_selected[0]}>30</option>
-	          <option value="60" {$time_selected[1]}>60</option>
+						<!--
+	          <option value="60" {$time_selected[1]}>60</option> -->
 	        </select>秒
 	      </li>
 				<li class="col">
