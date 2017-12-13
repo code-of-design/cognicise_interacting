@@ -30,6 +30,13 @@
     <!-- Stylesheets -->
     <!-- <link rel="stylesheet" href="<?php echo STYLESHEET; ?>" type="text/css"> -->
     <link rel="stylesheet" href="<?php echo STYLESHEET_MIN; ?>" type="text/css">
+    <style media="screen">
+      /* 参加者情報 */
+      .user-name{
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+    </style>
   </head>
   <body>
     <div class="page">
@@ -52,42 +59,24 @@
 					<h2>参加者情報</h2>
 				</div>
 			</div> <!-- .page-content__nav -->
-      <div class="row">
-        <form class="col resist-new-user-form" action="update_user_json.php" method="POST">
-          <input type="hidden" name="user-id" value="<?php echo $user_id; ?>">
-          <ul>
-            <li>
-              <label for="user-name">名前</label>
-              <input type="text" name="user-name" value="<?php echo $name; ?>">
-            </li>
-            <li>
-              <label for="user-age">年齢</label>
-              <input type="text" name="user-age" value="<?php echo $age; ?>"><span class="unit">歳</span>
-            </li>
-            <li>
-              <label for="user-resting-hr">安静時心拍数</label>
-              <input type="text" name="user-resting-hr" value="<?php echo $resting_hr; ?>"><span class="unit">BPM</span>
-            </li>
-            <li>
-              <input class="btn regist-btn" type="submit" name="submit" value="更新">
-            </li>
-          </ul>
-        </form>
+      <!-- 参加者の名前 -->
+      <div class="user-name"><?php echo $name; ?> さん</div>
         <!-- 認知課題 -->
-        <div class="col-9 cognitions">
+        <div class="cognitions">
           <ul class="container">
             <li class="row">
-              <span class="col item">認知課題</span>
-              <span class="col-2 item">時間</span>
-              <span class="col-2 item">リズム</span>
-              <span class="col-2 item">正答率</span>
+              <span class="col item">認知課題1</span>
+              <span class="col item">認知課題2</span>
+              <span class="col item">カウントの順序</span>
+              <span class="col item">時間</span>
+              <span class="col item">リズム</span>
+              <span class="col item">正答率</span>
               <span class="col item">日付</span>
             </li>
             <!-- TODO: 認知課題JSONを探索する -->
             <?php searchCognitions($user_id); ?>
           </ul>
         </div>
-      </div>
 		</div>  <!-- .page-content -->
 	</div> <!-- .page -->
   <!-- jquery -->

@@ -23,7 +23,9 @@
   // コグニサイズ設定のuserを取得する
   for ($j=0; $j<USER_SIZE; $j++) {
     $cognitions_json[$cognitions_size][$j]["user_id"] = $cognicise_settings_json[$j]["user_id"]; // user_id
-    $cognitions_json[$cognitions_size][$j]["cognition"] = $cognicise_settings_json[$j]["cognition"]; // 認知課題
+    $cognitions_json[$cognitions_size][$j]["cognition_1"] = $cognicise_settings_json[$j]["cognition_1"]; // 認知課題1
+    $cognitions_json[$cognitions_size][$j]["cognition_2"] = $cognicise_settings_json[$j]["cognition_2"]; // 認知課題2
+    $cognitions_json[$cognitions_size][$j]["count_order"] = $cognicise_settings_json[$j]["count_order"]; // カウントの順序
     $cognitions_json[$cognitions_size][$j]["time"] = $cognicise_settings_json[$j]["time"]; // 時間
     $cognitions_json[$cognitions_size][$j]["rhythm"] = $cognicise_settings_json[$j]["rhythm"]; // リズム
     $cognitions_json[$cognitions_size][$j]["answer_rate"] = 0; // TODO: 正答率
