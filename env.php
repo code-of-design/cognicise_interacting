@@ -7,5 +7,5 @@
   // Header
   define("LOGO_TITLE", "COGNICISE+INTERACTING");
   // user数
-  define("USER_SIZE", 4);
+  define("USER_SIZE", 3);
 ?>

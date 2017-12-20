@@ -16,12 +16,13 @@
     if (isset($_POST["count_order".($j+1)])) { // 認知課題のカウントの順序を取得する
       $cognicise_settings_json[$j]["count_order"] = $_POST["count_order".($j+1)];
     }
+    /*
     if (isset($_POST["time".($j+1)])) { // 認知課題の時間を取得する
       $cognicise_settings_json[$j]["time"] = (int)$_POST["time".($j+1)];
     }
     if (isset($_POST["rhythm".($j+1)])) { // 認知課題のリズムを取得する
       $cognicise_settings_json[$j]["rhythm"] = $_POST["rhythm".($j+1)];
-    }
+    } */
   }
 
   // コグニサイズ設定を設定する

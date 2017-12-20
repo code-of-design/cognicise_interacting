@@ -47,10 +47,11 @@
             <label for="user-age">年齢</label>
             <input type="text" name="user-age"><span class="unit">歳</span>
           </li>
+          <!--
           <li>
             <label for="user-resting-hr">安静時心拍数</label>
             <input type="text" name="user-resting-hr"><span class="unit">BPM</span>
-          </li>
+          </li> -->
           <li>
             <input class="btn regist-btn" type="submit" name="submit" value="登録">
           </li>

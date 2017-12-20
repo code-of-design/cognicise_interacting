@@ -57,6 +57,7 @@ $('[name=count_order4]').change(function() {
 });
 
 // 認知課題の時間のPOST通信
+/*
 $('[name=time1]').change(function() {
   var time = $('[name=time1]').val();
   $.post("set_cognition.php", {time1: time});
@@ -72,9 +73,10 @@ $('[name=time3]').change(function() {
 $('[name=time4]').change(function() {
   var time = $('[name=time4]').val();
   $.post("set_cognition.php", {time4: time});
-});
+}); */
 
 // 認知課題のリズムのPOST通信
+/*
 $('[name=rhythm1]').change(function() {
   var rhythm = $('[name=rhythm1]').val();
   $.post("set_cognition.php", {rhythm1: rhythm});
@@ -90,7 +92,7 @@ $('[name=rhythm3]').change(function() {
 $('[name=rhythm4]').change(function() {
   var rhythm = $('[name=rhythm4]').val();
   $.post("set_cognition.php", {rhythm4: rhythm});
-});
+}); */
 
 // STARTボタン
 $('.btn-start').click(function() {

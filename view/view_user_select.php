@@ -64,6 +64,7 @@ else if ($count_order_selected_num == "desc") {
 	$count_order_selected[1] = "selected";
 }
 // 時間
+/*
 if ($time_selected_num == 30) {
 	$time_selected[0] = "selected";
 	$time_selected[1] = "";
@@ -72,7 +73,9 @@ else if ($time_selected_num == 60) {
 	$time_selected[0] = "";
 	$time_selected[1] = "selected";
 }
+*/
  // リズム
+ /*
 if ($rhythm_selected_num == "low") {
 	$rhythm_selected[0] = "selected";
 	$rhythm_selected[1] = "";
@@ -88,6 +91,7 @@ else if ($rhythm_selected_num == "fast"){
 	$rhythm_selected[1] = "";
 	$rhythm_selected[2] = "selected";
 }
+*/
 
 $dom = <<<EOM
 	<div class="user-select">
@@ -141,22 +145,23 @@ $dom = <<<EOM
 	          <option value="desc" {$count_order_selected[1]}>引き算</option>
 	        </select>
 	      </li>
+				<!--
 	      <li class="col">
 	        <label class="label" for="time">時間</label>
-	        <select class="time" name="time{$user_num}">
-	          <option value="30" {$time_selected[0]}>30</option>
-						<!--
-	          <option value="60" {$time_selected[1]}>60</option> -->
+	        <select class="time" name="time">
+	          <option value="30" >30</option>
+	          <option value="60" >60</option>
 	        </select>秒
-	      </li>
+	      </li> -->
+				<!--
 				<li class="col">
 	        <label class="label" for="rhythm">リズム</label>
-	        <select class="rhythm" name="rhythm{$user_num}">
-	          <option value="low" {$rhythm_selected[0]}>遅い</option>
-	          <option value="normal" {$rhythm_selected[1]}>普通</option>
-	          <option value="fast" {$rhythm_selected[2]}>速い</option>
+	        <select class="rhythm" name="rhythm">
+	          <option value="low" >遅い</option>
+	          <option value="normal" >普通</option>
+	          <option value="fast" >速い</option>
 	        </select>
-	      </li>
+	      </li> -->
 
 		  </ul> <!-- .user-select-content -->
 		</div> <!-- .inner -->

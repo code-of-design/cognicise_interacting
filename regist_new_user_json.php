@@ -10,10 +10,10 @@
   $user_id = $users_json[count($users_json)-1]["id"]+1; // userId
   $user_name = $_POST["user-name"]; // user名
   $user_age = $_POST["user-age"]; // 年齢
-  $resting_hr = $_POST["user-resting-hr"]; // 安静時心拍数
-  $max_hr = 207-($user_age*0.7); // 最大心拍数
-  $exercise_intensity = 0.5; // 運動強度
-  $target_hr = $exercise_intensity*($max_hr-$resting_hr)+$resting_hr; // 目標心拍数
+  $resting_hr = 0; // $_POST["user-resting-hr"]; // 安静時心拍数
+  $max_hr = 0; // 207-($user_age*0.7); // 最大心拍数
+  $exercise_intensity = 0; // 0.5; // 運動強度
+  $target_hr = 0; // $exercise_intensity*($max_hr-$resting_hr)+$resting_hr; // 目標心拍数
 
   $new_user = array(
     "id" => $user_id,
