@@ -13,7 +13,7 @@
     if($user_id == $users_json[$i]["id"]){ // userId
       $name = $users_json[$i]["name"]; // user名
       $age = $users_json[$i]["age"]; // 年齢
-      $resting_hr = (int)$users_json[$i]["resting_hr"]; // 安静時心拍数
+      $resting_hr = 0; // (int)$users_json[$i]["resting_hr"]; // 安静時心拍数
     }
   }
 ?>
@@ -68,8 +68,6 @@
               <span class="col item">認知課題1</span>
               <span class="col item">認知課題2</span>
               <span class="col item">カウントの順序</span>
-              <span class="col item">時間</span>
-              <span class="col item">リズム</span>
               <span class="col item">正答率</span>
               <span class="col item">日付</span>
             </li>
